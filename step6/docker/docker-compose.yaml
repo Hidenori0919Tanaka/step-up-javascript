@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+ app:
+   container_name: nodejs_base
+   build:
+     context: .
+     dockerfile: Dockerfile
+   volumes:
+     - ./app:/src
+     - /src/node_modules
+   ports:
+     - "3001:3001"
+   stdin_open: true
+   tty: true
